@@ -15,6 +15,12 @@ if(NOT MSVC)
         _LARGEFILE64_SOURCE=1
         _FILE_OFFSET_BITS=64
     )
+
+    if(MINGW)
+        add_compile_definitions(
+            WIN32
+        )
+    endif()
 endif()
 
 add_library(jpgd jpgd.cpp)
